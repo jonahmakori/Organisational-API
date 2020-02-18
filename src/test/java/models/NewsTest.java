@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DepartmentNewsTest {
+public class NewsTest {
 
     @Before
     public void setUp() throws Exception {
@@ -44,7 +44,7 @@ public class DepartmentNewsTest {
 
     @Test
     public void getTypeGetsTypeCorrectly() {
-        DepartmentNews newNews = new DepartmentNews("Ronaldo is the most followed on instagram", 4 );
+        News newNews = new News("Celebs","Ronaldo is the most followed on instagram",4);
         assertEquals(4, newNews.getDepartmentId());
     }
 
@@ -55,7 +55,7 @@ public class DepartmentNewsTest {
         assertEquals(8, newNews.getDepartmentId());
     }
 
-    public DepartmentNews setupNews(){
-        return new DepartmentNews("Rugby is a rough game",5);
+    public News setupNews(){
+        return new News("facts","Rugby is a rough game",5);
     }
 }
