@@ -7,6 +7,8 @@ public class News {
     private String content;
     private String topic;
     private String description;
+
+
     private int departmentId;
 
 
@@ -58,12 +60,29 @@ public class News {
         if (this == o) return true;
         if (!(o instanceof News)) return false;
         News news = (News) o;
-        return Objects.equals(content, news.content);
+        return getId() == news.getId() &&
+                Objects.equals(departmentId, news.departmentId) &&
+                Objects.equals(content, news.content)&&
+                Objects.equals(topic, news.topic) &&
+                Objects.equals(description, news.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content);
+        return Objects.hash(getId(), content, topic, description, departmentId);
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof News)) return false;
+//        News news = (News) o;
+//        return Objects.equals(content, news.content);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(content);
+//    }
 }
 

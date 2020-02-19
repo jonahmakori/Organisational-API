@@ -3,14 +3,15 @@ package dao;
 import models.Department;
 import models.News;
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class Sql2oDepartmentDaoTest {
     private static Connection conn;
@@ -18,9 +19,9 @@ public class Sql2oDepartmentDaoTest {
     private static Sql2oUserDao userDao;
     private static Sql2oNewsDao newsDao;
 
-    @BeforeClass
-    public static void setUp() throws Exception {
-        String connectionString = "jdbc:postgresql://localhost:5432/organisational_api_test";
+    @Before
+    public void setUp() throws Exception {
+        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "jonah", "jonah1ma");
         departmentDao = new Sql2oDepartmentDao(sql2o);
         userDao = new Sql2oUserDao(sql2o);
@@ -88,7 +89,7 @@ public class Sql2oDepartmentDaoTest {
     public void getAllUsersForADepartmentReturnsUsersCorrectly() {
         Department testDepartment = new Department ("accounting", "handles company's finance", 5);
         departmentDao.add(testDepartment);
-        int theId = testDepartment.getId();
+        int departmentId = testDepartment.getId();
         News firstUser = new News("Corruption",  "Corruption is common in african countries",1);
         userDao.add(firstUser);
         News secondUser = new News("Sports",  "Football is the most watched sport",2);
@@ -101,15 +102,15 @@ public class Sql2oDepartmentDaoTest {
     public void getAllNewsForADepartmentReturnsUsersCorrectly() {
         Department testDepartment = new Department ("accounting", "handles company's finance", 5);
         departmentDao.add(testDepartment);
-        int theId = testDepartment.getId();
+        int departmentId = testDepartment.getId();
         News firstNews = new News("Entertainment","Koroga festival wentdown in Nakuru",3);
         newsDao.add(firstNews);
         News secondNews = new News("Weather", "Rains will be expected in northern parts of Kenya",4);
         newsDao.add(secondNews);
-
-        News[] departmentNews = {firstNews, secondNews};
-        assertEquals(Arrays.asList(departmentNews), departmentDao.getNews(testDepartment.getId()));
+        News[] News = {firstNews, secondNews};
+        assertEquals(Arrays.asList(News), departmentDao.getNews(testDepartment.getId()));
     }
+
     public Department setupNewDepartment(){
         Department department = new Department("accounting", "handles company's finance", 5);
         departmentDao.add(department);

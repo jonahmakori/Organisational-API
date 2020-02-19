@@ -1,6 +1,6 @@
 SET MODE PostgreSQL;
-CREATE DATABASE organisational_api;
-\c organisational_api;
+--CREATE DATABASE organisational_api;
+--\c organisational_api;
 
 CREATE TABLE IF NOT EXISTS departments(
  id serial PRIMARY KEY,
@@ -23,4 +23,4 @@ CREATE TABLE IF NOT EXISTS news (
  departmentId int,
  description VARCHAR
  );
-CREATE DATABASE organisational_api_test WITH TEMPLATE organisational_api;
+--CREATE DATABASE organisational_api_test WITH TEMPLATE organisational_api;
