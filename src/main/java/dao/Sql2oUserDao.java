@@ -1,5 +1,6 @@
 package dao;
 
+import models.News;
 import models.User;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -57,6 +58,11 @@ public class Sql2oUserDao implements UserDao {
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
+    }
+
+    @Override
+    public void add(News firstUser) {
+
     }
 
     @Override

@@ -15,6 +15,7 @@ public class News {
         this.description = "general news";
     }
     public News(String topic,String content, int departmentId) {
+        this.topic = topic;
         this.content = content;
         this.departmentId = departmentId;
         this.description = "department news";

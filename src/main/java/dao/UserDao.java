@@ -1,7 +1,7 @@
 package dao;
 
+import models.News;
 import models.User;
-import models.Department;
 
 import java.util.List;
 
@@ -16,4 +16,6 @@ public interface UserDao {
 
     void deleteById(int id);
     void clearAll();
+
+    void add(News firstUser);
 }
