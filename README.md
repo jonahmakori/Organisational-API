@@ -18,7 +18,7 @@ This application will allow the user to update the cpmpany about what is going o
 - CREATE TABLE departements (id serial PRIMARY KEY, dept_name VARCHAR, dept_description VARCHAR, dept_size INTEGER);
 - CREATE TABLE users (id serial PRIMARY KEY, title VARCHAR body VARCHAR dept_Id INTEGER);
 - CREATE TABLE news (id serial PRIMARY KEY, user_name VARCHAR,user_position VARCHAR, user_role VARCHAR);
-- CREATE DATABASE organisationapi_Test WITH TEMPLATE organisationapi;
+- CREATE DATABASE organisation_api_Test WITH TEMPLATE organisationapi;
 
 ## Behaviour Driven Development
 
@@ -29,7 +29,7 @@ This application will allow the user to update the cpmpany about what is going o
 
 
 ## Live Website
-View the complete site [here](https://github.com/jonahmakori/Organisational-(API))
+View the complete site [here](https://github.com/jonahmakori/Organisational-API)
 
 ## Contributors
  - Jonah Makori
