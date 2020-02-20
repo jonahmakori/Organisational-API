@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS users (
  role VARCHAR,
  departmentId INTEGER
 );
-
 CREATE TABLE IF NOT EXISTS news (
  id int PRIMARY KEY auto_increment,
  topic VARCHAR,

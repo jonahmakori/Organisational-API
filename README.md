@@ -1,8 +1,7 @@
 # Organisational-News -(API)
 
 ## Description
--This application allows a user to input and recordquotes and also read quotes and picture story.
-
+This application will allow the user to update the cpmpany about what is going on and who is doing what. I t gives news to every body in the company .
 
 ## prerequisites
 
