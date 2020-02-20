@@ -1,26 +1,36 @@
-# Hero-Squad App
+# Organisational-News -(API)
 
 ## Description
-This is an app whereby A user Creates a Hero and Assigns the hero t a Squad.
+-This application allows a user to input and recordquotes and also read quotes and picture story.
+
 
 ## prerequisites
 
 1. Uses Jdk inorder for it to be compiled.
 2. Uses Gradle inorder to built.
-3.USes heroku to be deployed on Github.
+3.Uses Postman to be executed.
 
+## Set-Up
+- Install IntelliJ IDEAL Community Edition
 
+- Open it within IntelliJ
+- CREATE DATABASE organisationapi;
+- \c organisationapi;
+- CREATE TABLE departements (id serial PRIMARY KEY, dept_name VARCHAR, dept_description VARCHAR, dept_size INTEGER);
+- CREATE TABLE users (id serial PRIMARY KEY, title VARCHAR body VARCHAR dept_Id INTEGER);
+- CREATE TABLE news (id serial PRIMARY KEY, user_name VARCHAR,user_position VARCHAR, user_role VARCHAR);
+- CREATE DATABASE organisationapi_Test WITH TEMPLATE organisationapi;
 
 ## Behaviour Driven Development
 
 | Behaviour | Input | Output |
 | --------- | ------| ------ |
-|Gradle Run on server locally in port (4567)|Click on the Cerate Hero luink And Create Hero|Click on the Add to Squad And then Will be successful|
+|Gradle Run on server locally in port (4567)|open postman and put a path the add a json code|Click run and view the post or get|
 
 
 
 ## Live Website
-View the complete site [here](https://github.com/jonahmakori/Hero-Squad)
+View the complete site [here](https://github.com/jonahmakori/Organisational-(API))
 
 ## Contributors
  - Jonah Makori
@@ -28,12 +38,11 @@ View the complete site [here](https://github.com/jonahmakori/Hero-Squad)
 
 ## Technologies Used
 - java
-
-
-## codebeat
-
-My Grade
-[![codebeat badge](https://codebeat.co/badges/2fa9a414-049d-4611-8bb0-aa9bb692c013)](https://codebeat.co/projects/github-com-jonahmakori-hero-squad-feature-dev)
+- Spark 
+- postman
+- Gson
+- Json 
+- Postgres
 
 ## Support and contact details
 
@@ -43,7 +52,7 @@ My Grade
 ### License
 
 The project is under[MIT license](/blob/master/LICENSE)
-Copyright &copy; 2019.All rigths reserved
+Copyright &copy; 2020.All rigths reserved
 
 
 
