@@ -11,15 +11,16 @@ public interface DepartmentDao {
     void add (Department department);
 
     List<Department> getAll();
-    Department findById(int id);
+    Department findById(int departmentId);
     List<User> getUsers(int departmentId);
     List<News> getNews(int departmentId);
 
     //update
-    void update(int id, String departmentName, String description, int numberOfEmployees);
+    void update(int departmentId, String departmentName, String description, int numberOfEmployees);
 
     //delete
-    void deleteById(int id);
+    void deleteById(int departmentId);
     void clearAll();
 
+    void addDepartmentToNews(Department testDepartment, News firstNews);
 }

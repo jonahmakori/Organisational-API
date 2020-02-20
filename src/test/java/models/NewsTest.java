@@ -44,8 +44,8 @@ public class NewsTest {
 
     @Test
     public void getTypeGetsTypeCorrectly() {
-        News newNews = new News("Celebs","Ronaldo is the most followed on instagram",4);
-        assertEquals(4, newNews.getDepartmentId());
+        News newNews = new News("Celebs","Ronaldo is the most followed on instagram","Department News");
+        assertEquals(0, newNews.getDepartmentId());
     }
 
     @Test
@@ -56,6 +56,6 @@ public class NewsTest {
     }
 
     public News setupNews(){
-        return new News("facts","Rugby is a rough game",5);
+        return new News("facts","Rugby is a rough game","Department News");
     }
 }

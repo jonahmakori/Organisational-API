@@ -31,11 +31,11 @@ public class Sql2oUserDaoTest {
         userDao.clearAll();
         newsDao.clearAll();
     }
-//    @AfterClass
-//    public static void shutDown() throws Exception{
-//        conn.close();
-//        System.out.println("connection closed");
-//    }
+    @AfterClass
+    public static void shutDown() throws Exception{
+        conn.close();
+        System.out.println("connection closed");
+    }
 
     @Test
     public void addingUserSetsId() throws Exception {
@@ -76,9 +76,9 @@ public class Sql2oUserDaoTest {
     public void add_addDepartmentIdIntoDB_true() {
         Department testDepartment = new Department("accounting", "handles firm accounting", 6);
         departmentDao.add(testDepartment);
-        User testUser = new User("Bubbles", testDepartment.getId(), "auditor");
+        User testUser = new User("Bubbles", "Manager" ,"auditor",testDepartment.getDepartmentId());
         userDao.add(testUser);
-        assertEquals(testUser.getDepartmentId(), testDepartment.getId());
+        assertEquals(testUser.getDepartmentId(), testDepartment.getDepartmentId());
     }
 
     @Test
@@ -88,7 +88,7 @@ public class Sql2oUserDaoTest {
         User user1 = setupUserForDepartment(testDepartment);
         User user2 = setupUserForDepartment(testDepartment);
         User userForOtherDepartment = setupUserForDepartment(otherDepartment);
-        assertEquals(2, userDao.getAllUsersByDepartment(testDepartment.getId()).size());
+        assertEquals(2, userDao.getAllUsersByDepartment(testDepartment.getDepartmentId()).size());
     }
 
     public Department setupDepartment() {
@@ -98,11 +98,11 @@ public class Sql2oUserDaoTest {
     }
 
     public User setupUserForDepartment(Department department) {
-        User user = new User("Annette", department.getId(), "programmer");
+        User user = new User("Annette", "Director","programmer",department.getDepartmentId());
         userDao.add(user);
         return user;
     }
     public User setupNewUser() {
-        return new User("Apiyo", 1, "accountant");
+        return new User("Apiyo","Assistant","accountant", 1 );
     }
 }

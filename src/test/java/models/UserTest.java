@@ -39,7 +39,7 @@ public class UserTest {
     @Test
     public void getsDepartmentIdReturnsDepartmentIdCorrectly(){
         User newUser = setupNewUser();
-        assertEquals(1, newUser.getDepartmentId());
+        assertEquals(2, newUser.getDepartmentId());
     }
 
     @Test
@@ -71,6 +71,6 @@ public class UserTest {
 
 
     public User setupNewUser(){
-        return new User("Apiyo", 1, "accountant");
+        return new User("Apiyo", "Ceo","accountant",2 );
     }
 }

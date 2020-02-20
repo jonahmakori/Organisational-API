@@ -12,11 +12,12 @@ public class News {
     private int departmentId;
 
 
-    public News(String topic,String content) {
+    public News(String topic,String content,String description) {
+        this.topic = topic;
         this.content = content;
         this.description = "general news";
     }
-    public News(String topic,String content, int departmentId) {
+    public News(String topic,String content,String description, int departmentId) {
         this.topic = topic;
         this.content = content;
         this.departmentId = departmentId;

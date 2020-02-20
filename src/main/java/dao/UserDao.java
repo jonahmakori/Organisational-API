@@ -12,7 +12,7 @@ public interface UserDao {
     List<User> getAll();
     User findById(int id);
     List<User> getAllUsersByDepartment(int departmentId);
-    void update(int id, String departmentName, String description, int numberOfEmployees);
+    void update(int id, String userName, String positionLevel, String role, int departmentId);
 
     void deleteById(int id);
     void clearAll();

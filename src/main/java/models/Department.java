@@ -3,19 +3,26 @@ package models;
 import java.util.Objects;
 
 public class Department {
-    private int id;
-    private String departmentName;
     private int departmentId;
+    private String departmentName;
     private String description;
     private int numberOfEmployees;
 
 
 
     public Department(String departmentName, String description, int numberOfEmployees) {
-        this.departmentName = departmentName;
         this.departmentId = departmentId;
+        this.departmentName = departmentName;
         this.description = description;
         this.numberOfEmployees = numberOfEmployees;
+    }
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getDepartmentName() {
@@ -30,6 +37,10 @@ public class Department {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getNumberOfEmployees() {
         return numberOfEmployees;
     }
@@ -37,51 +48,21 @@ public class Department {
     public void setNumberOfEmployees(int numberOfEmployees) {
         this.numberOfEmployees = numberOfEmployees;
     }
-    public int getDepartmentId() {
-        return departmentId;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-//    @Override
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Department)) return false;
         Department that = (Department) o;
-        return getId() == that.getId() &&
-                Objects.equals(departmentId, that.departmentId) &&
-                Objects.equals(numberOfEmployees, that.numberOfEmployees)&&
+        return departmentId == that.departmentId &&
+                numberOfEmployees == that.numberOfEmployees &&
                 Objects.equals(departmentName, that.departmentName) &&
                 Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), departmentName, departmentId, description, numberOfEmployees);
+        return Objects.hash(departmentId, departmentName, description, numberOfEmployees);
     }
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof Department)) return false;
-//        Department that = (Department) o;
-//        return numberOfEmployees == that.numberOfEmployees &&
-//                Objects.equals(departmentName, that.departmentName) &&
-//                Objects.equals(description, that.description);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(departmentName, description, numberOfEmployees);
-//    }
 }
 
